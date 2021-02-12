@@ -1,0 +1,56 @@
+<!DOCTYPE html >
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Account</title>
+        <link href="loginP.css" rel="stylesheet" type="text/css" />
+        
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="IndexP.html"><img src="logoP.png" class="logo"></a>
+            <ul>
+                <li><a href="IndexP.html">Home</a></li>
+                <li><a href="#">Classes</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="AboutusNew.html">Contact</a></li>
+                <li><a href="signupP.html">Register</a></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="sign-in">
+            <form>
+                <h2 style="color: white">Log In</h2>
+                <input class="input" type="text" name="username" placeholder="Email" />
+                <input class="input" type="password" name="pass" placeholder="Password" /><br><br>
+                <a href=""><input type="button" value="Log In" onclick="myFunction()"></a><br><br>
+                <div id="container">
+                    <a href="forget.html" style=" margin-right: 0px; font-size: 13px; font-family: 'Segoe UI', Tahoma, Geneva, sans-serif;">Forgot Password?</a>
+                </div><br><br><br><br><br><br>
+                Dont have account?<a href="signupP.html">&nbsp;Sign Up</a>
+                
+            </form>
+        </div>
+        <div class="footer">
+            <div class="footer-info">
+                 <div class="text-footer">
+                     <h4>Përkthimi | 17523 Presevo | Phone: +381631310456 | bardhyl2000@gmail.com</h4>
+                     <p><i>&copy;</i>2020 by Përkthimi</p>
+                 </div>
+              </div>
+         </div>
+        <script>
+            function myFunction(){
+                var inputList=document.getElementsByClassName("input");
+                var usernameValue= inputList[0].value;
+                var passValue = inputList[1].value;
+                
+                if( usernameValue == "" || passValue == ""){
+                    alert("Mbush fushat e kerkuara!");
+                }else{
+                    alert("Loged In!");
+                }
+            }
+        </script>
+    </body>
+</html>

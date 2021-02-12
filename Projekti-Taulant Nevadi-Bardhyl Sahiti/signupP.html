@@ -1,0 +1,114 @@
+<!DOCTYPE html >
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Sign up</title>
+        <link href="signupP.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
+        <style>
+            #msg{
+                visibility: hidden;
+                min-width: 250px;
+                background-color: yellow;
+                color: #000;
+                text-align: center;
+                border-radius: center;
+                padding: 16px;
+                position: fixed;
+                z-index: 1;
+                
+                top: 30px;
+                font-size: 17px;
+                margin: auto;
+                margin-left: -60px;;
+            }
+            #msg.show{
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s,fadeout 0.5s 2.5s;
+            }
+            @-webkit-keyframes fadein{
+                from{top: 0; opacity: 0;}
+                to {top:30px; opacity: 1;}
+            }
+            @keyframes fadein{
+                from{top: 0; opacity: 0;}
+                to {top:30px; opacity: 1;}
+            }
+            @-webkit-keyframes fadeout{
+                from{top:30px; opacity: 1;}
+                to {top: 0; opacity: 0;}
+            }
+            @keyframes fadeout{
+                from{top:30px; opacity: 1;}
+                to {top: 0; opacity: 0;}
+            }
+        </style>
+    </head>
+    <body>
+        <div class="navbar">
+            <a href="IndexP.html"><img src="logoP.png" class="logo"></a>
+            <ul>
+                <li><a href="IndexP.html">Home</a></li>
+                <li><a href="#">Classes</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="AboutusNew.html">Contact</a></li>
+                <li><a href="signupP.html">Register</a></li>
+                <li></li>
+            </ul>
+        </div>
+        <div class="signup">
+            <form>
+                <h2 style="color: #fff;">Sign Up</h2>
+                <input class="input"  type="text" name="username" placeholder="First name"> <br><br>
+                <input class="input"  type="text" name="username" placeholder="Last name"><br><br>
+                <input class="input"  type="text" name="email" placeholder="Email address"><br><br>
+                <input class="input"  type="password" name="pass" placeholder="Password"><br><br>
+                <input class="input"  type="password" name="pass" placeholder="Confirm Password"><br><br>
+                <input class="input"  type="button"  value="Sign up" onclick="mainFunction()"><br><br>
+                <div id="msg">Congratulations you signed up successfully!!!</div>
+
+                
+                    Already have an account?<a href="loginP.html" style="text-decoration: none; font-family: 'Play', sans-serif; color: yellow;">&nbsp;Log In</a>
+            </form>
+        </div>
+        <div class="footer">
+            <div class="footer-info">
+                 <div class="text-footer">
+                     <h4>Përkthimi | 17523 Presevo | Phone: +381631310456 | bardhyl2000@gmail.com</h4>
+                     <p><i>&copy;</i>2020 by Përkthimi</p>
+                 </div>
+              </div>
+         </div>
+            <script>
+                    
+                function mainFunction(){
+                    var signupElements = document.getElementsByClassName('input');
+                    var firstnameValue = signupElements[0].value;
+                    var lastnameValue = signupElements[1].value;
+                    var emailValue = signupElements[2].value;
+                    var passValue = signupElements[3].value;
+                    var confirmpassValue = signupElements[4].value;
+                    
+                    if( firstnameValue == "" || lastnameValue == "" || emailValue == "" || passValue == "" || confirmpassValue == ""){
+                        alert("Nuk jane te dhenat e mbushura!");
+                    }else{
+                        alert("Signed up successfuly!");
+                    }
+                }
+
+                function successfulFunction(){
+                    var x=document.getElementById("msg");
+                    x.className = "show";
+                    setTimeout(function(){x.className = x.className.replace("show",""); }, 3000);
+                }
+                function emptyFunction(){
+                    var x=document.forms["username"]["email"]["pass"].value;
+                    if(x == ""){
+                        alert("Fill the data!!");
+                        return false;
+                    }
+                }
+            </script>
+    </body>
+</html>
